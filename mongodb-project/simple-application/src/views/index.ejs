@@ -1,0 +1,20 @@
+<%-include("header.ejs") %> 
+
+<div class="content">
+  <div class="content">
+    <div class="login-field">
+      <form id="login-form" action="/" method="post">
+        <div class="user-box">
+          <label id="userId-label" for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="password-box">
+          <label id="password-label" for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-index">Login</button>
+        <div class="error-message" id="error-message"></div>
+      </form>
+    </div>
+  </div>
+<%-include("footer.ejs") %> 

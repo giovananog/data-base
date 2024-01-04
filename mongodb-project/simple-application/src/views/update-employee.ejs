@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <title>GERENCIAMENTO</title>
+</head>
+  
+<body>
+  <main>
+    <div class="hotel-header">
+    </div>
+
+
+    <a class="back-button" href="/employees"><img src="/seta-esquerda.png"></a>
+    <div class="content">
+        <div class="login-field">
+            <h2>Atualizar Funcionário</h2>
+            <form action="/saveUpdatedEmployee" method="post" class="update-guest-form">
+                <input type="hidden" name="employee_id" value="<%= employee._id %>" />
+                <label for="nome">Nome:</label>
+                <input type="text" name="name" value="<%= employee.name %>" required />
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" name="last_name" value="<%= employee.last_name %>" required />
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" value="<%= employee.cpf %>" required />
+                <label for="cnh">Cnh:</label>
+                <input type="text" name="cnh" value="<%= employee.cnh %>" required />
+                <label for="sexo">Sexo:</label>
+                <input type="text" name="gender" value="<%= employee.gender %>" required />
+                <label for="manager_tag">TAG gerente:</label>
+                <input type="text" name="manager_tag" value="<%= employee.manager_tag %>" required />
+
+                <button type="submit">Salvar Atualizações</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<%- include("footer.ejs") %>

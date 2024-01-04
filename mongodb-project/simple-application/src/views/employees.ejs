@@ -1,0 +1,43 @@
+<%- include("header.ejs") %>
+
+<a class="back-button" href="/home"><img src="styles/seta-esquerda.png"></a>
+<div class="content">
+  <div class="choose-field">
+    <div class="search-input">
+    </div>
+    <div class="guest-field">
+      <a class="botao-adicionar" href="/addEmployee">Adicionar</a>
+    </div>
+    <div class="table-div">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>CNH</th>
+            <th>CPF</th>
+            <th>Sexo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% employees.forEach(function(employee) { %>
+            <tr>
+              <td><%= employee.name %></td>
+              <td><%= employee.last_name %></td>
+              <td><%= employee.cnh %></td>
+              <td><%= employee.cpf %></td>
+              <td><%= employee.gender %></td>
+              <td class="delete-link">
+                <a href="/deleteEmployee/<%=employee._id %>" data-method="delete" onclick="return confirm('Tem certeza que deseja deletar este funcionário?')">x</a>
+                <a href="/updateEmployee/<%=employee._id %>">^</a>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include("footer.ejs") %>

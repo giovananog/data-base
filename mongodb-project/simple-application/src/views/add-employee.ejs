@@ -1,0 +1,39 @@
+<%- include("header.ejs") %>
+
+<a class="back-button" href="/home"><img src="styles/seta-esquerda.png"></a>
+<div class="content">
+  <div class="login-field">
+    <form action="/addEmployee" method="post" class="guest-form">
+  
+        <label for="name">Nome:</label>
+        <input type="text" name="name" required placeholder="Nome Funcionário">
+
+        <label for="last_name">Sobrenome:</label>
+        <input type="text" name="last_name" required placeholder="Sobrenome Funcionário">
+
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" required placeholder="CPF Funcionário">
+      
+        <label for="cnh">CNH:</label>
+        <input type="text" name="cnh" required placeholder="CNH Funcionário">
+
+        <select name="manager" class="gender-input" required>
+            <option value="" disabled selected>TAG gerente</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+
+        <select name="gender" class="gender-input" required>
+          <option value="" disabled selected>Sexo</option>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
+        </select>
+        
+        <button type="submit" >Cadastrar Funcionário</button>
+      
+        <div class="error-message" id="error-message"></div>
+    </form>
+  </div>
+</div>
+
+<%- include("footer.ejs") %>
