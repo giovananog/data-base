@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <title>HOTEL BEIRA-MAR</title>
+</head>
+
+<body>
+  <main>
+    <div class="hotel-header">
+        <h1 class="hotel-header-title">HOTEL BEIRA-MAR</h1>
+    </div>
+
+<a class="back-button" href="/home"><img src="seta-esquerda.png"></a>
+<div class="content">
+  <div class="new-reservation">
+    <form action="/addReservation" method="post" class="reservation-form">
+
+        <div>
+
+            <label for="guest_id">ID Hóspede</label>
+            <input type="number" name="guest_id" required placeholder="ID Hóspede">
+
+            <select name="manager_id" class="gender-input" required>
+                <option value="" disabled selected>ID gerente</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            <label for="room_id">ID Quarto</label>
+            <input type="number" name="room_id" required placeholder="ID Quarto">
+
+        </div>
+
+        <div>
+            <label for="lodging_id">ID Hospedagem</label>
+            <input type="number" name="lodging_id" required placeholder="ID Hospedagem">
+            <label for="reservation_id">ID Reserva</label>
+            <input type="number" name="reservation_id" required placeholder="ID Quarto">
+
+        </div>
+
+        <div>
+            <label for="checkin_date">Início Reserva:</label>
+            <input type="date" name="checkin_date" required>
+
+            <label for="checkout_date">Fim Reserva:</label>
+            <input type="date" name="checkout_date" required>
+
+            <label for="status">Status:</label>
+            <input type="number" name="status" required>
+
+        </div>
+
+        <button type="submit">Adicionar reserva</button>
+
+      </form>
+
+
+  </div>
+</div>
+</main>
+<footer>
+</footer>
+</body>
+</html>
