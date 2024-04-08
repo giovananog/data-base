@@ -1,121 +1,740 @@
-</style></head><body><article id="0d024ee3-cfa7-4466-b524-3e515f9b891b" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/database_yellow.svg"/></div><h1 class="page-title">SQL</h1><p class="page-description"></p></header><div class="page-body"><p id="4f2e300d-9dce-4c01-ae93-a546b2033329" class="">
-</p><p id="baa3aa4b-8fa4-4f9e-a637-940213386648" class="">
-</p><p id="42d744e8-7f12-4504-83e0-92f2f1099ba3" class="">
-</p><ul id="57416f6d-ba87-479c-9cf4-8be96eacdd1f" class="toggle"><li><details open=""><summary>SELECT (seleciona tabelas)</summary><ul id="3c1a1ab8-78cb-459b-94ec-e8e9dc21d512" class="bulleted-list"><li style="list-style-type:disc">SELECT * FROM tabela1    (seleciona tudo da tabela1)</li></ul><ul id="1571af03-16c4-4bf4-a926-45a42e078f8b" class="bulleted-list"><li style="list-style-type:disc">SELECT StoreKey, StoreName, StorePhone FROM DimStore  (seleciona colunas especificas q eu quero)    </li></ul><ul id="aed5f5e6-3da6-4aa7-86c1-9444225d5837" class="bulleted-list"><li style="list-style-type:disc">SELECT TOP(10) * FROM DimProduct   (seleciona as 10 primeiras linhas da tabela)</li></ul><ul id="f543214c-8b8e-4516-88e3-ae2a545da3d2" class="bulleted-list"><li style="list-style-type:disc">SELECT TOP(10) PERCENT * FROM DimProduct  (seleciona as 10% primeiras linhas da tabela)</li></ul><ul id="17b47d09-9dfd-4a2a-ae7a-3e6e2c2caa4f" class="bulleted-list"><li style="list-style-type:disc">SELECT DISTINCT Colorname FROM DimProduct   (seleciona só as linhas de valores distintos de uma coluna)</li></ul></details></li></ul><ul id="de02ac04-b523-4e3c-a33c-72a9be8f64c2" class="toggle"><li><details open=""><summary>AS (renomear colunas)</summary><ul id="e0cfc20e-141d-4ddd-976e-71852762d8f1" class="bulleted-list"><li style="list-style-type:disc">SELECT productname AS ‘produto’ FROM dimproduct    (altera o nome da coluna na hora de visualizar)</li></ul><p id="9f4a5077-7b5d-4402-b3fc-84abcc339ec2" class="">
-</p></details></li></ul><ul id="8295816f-5780-446d-8377-2b48b0d0aa2b" class="toggle"><li><details open=""><summary>ORDER BY (ordena de acordo com alguma coluna)</summary><ul id="6bd1b456-36a4-4c41-a29a-ba222dd88b72" class="bulleted-list"><li style="list-style-type:disc">SELECT </li></ul><p id="44e6c8c3-abd5-43e5-adea-4b985a4c10eb" class="">                * </p><p id="26427557-4af0-48cf-ad9f-5aa1d5b9159a" class="">       FROM </p><p id="9db56554-65ad-4d2d-b75a-ec8e943b0247" class="">                tabela1 </p><p id="1a0f9099-b5a6-4558-bf8a-2ea9a11a1af6" class="">       ORDER BY coluna1 ASC (seleciona tudo da tabela1 e ordena em ordem crescente pela coluna1)</p><ul id="7e0563f8-8d8f-4762-b0dc-697981d00661" class="bulleted-list"><li style="list-style-type:disc">SELECT </li></ul><p id="c7b8bc59-5789-4c5a-9e5b-f45d1dce95c9" class="">                * </p><p id="650a2a49-d522-48c2-88a0-ec7738bbaec7" class="">       FROM </p><p id="08cd2f63-98ed-49bb-b958-b9171ab37a3d" class="">                tabela1 </p><p id="dd309e28-3626-4f84-84a2-5f0f6ec2315c" class="">       ORDER BY coluna1 DESC (seleciona tudo da tabela1 e ordena em ordem decrescente pela coluna1)</p><p id="8ce86644-f7d0-4df7-b7d8-b67704f34451" class="">
-</p><ul id="3c842e17-3f9a-4639-9b70-6f34fc886222" class="bulleted-list"><li style="list-style-type:disc">SUM: esta cláusula é usada para somar os valores de uma determinada coluna em uma determinada tabela. Por exemplo:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="76c7069e-966e-4d23-bac5-f883b60cf595" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">  - SELECT SUM(Price) FROM DimProduct
-</code></pre></li></ul></details></li></ul><ul id="aeff45fb-981e-464e-b5c9-a165c9518b9d" class="toggle"><li><details open=""><summary>WHERE (seleciona as linhas que atenderem ao critério desejado)</summary><ul id="ba333ea9-d3b1-4628-ae41-ba6cd6e9bd97" class="toggle"><li><details open=""><summary>WHERE (selects rows that meet the desired criteria)</summary><ul id="c1a18f8e-a784-48c3-9166-e3e49ddc3840" class="bulleted-list"><li style="list-style-type:disc">SELECT</li></ul><p id="3a306573-19bc-4324-93a7-1fb57bea220f" class="">             product</p><p id="2f9a16f2-0925-4a3c-ba0b-ecb762662270" class="">       FROM</p><p id="14898ff6-1638-4964-b9f9-d5b80fd32888" class="">             dimProduct </p><p id="3b4fa069-df00-4bd2-94b4-3f348f306ccd" class="">        WHERE price &gt; 50 </p><p id="052ab3a5-72a9-4187-9931-d613660a349f" class="">(selects all products from dimProduct where the price is greater than 50)</p><ul id="a447a018-397a-4dee-85ba-d335c87f5970" class="bulleted-list"><li style="list-style-type:disc">SELECT</li></ul><p id="f0b7ee21-1bc3-44ca-a605-0cbc5f4e852d" class="">             product</p><p id="1d31fdc7-4f3b-45f5-bc5d-5728f75a270f" class="">       FROM</p><p id="f79028b1-5f64-4b41-93de-8ad951327a73" class="">             dimProduct </p><p id="a46c0859-79f5-42dc-87fb-37e9ee7aa919" class="">        WHERE product = ‘rftgyh’ AND sla = ‘wffdesw’</p><p id="7b9ee7aa-3e50-4c31-bd14-0a73aada76e2" class="">
-</p></details></li></ul><ul id="859ab23f-2ec9-44fd-83bc-e6ac3309886c" class="toggle"><li><details open=""><summary>WHERE IN (evita repetição de código)</summary><ul id="c5d00f68-6a46-4729-bbd0-b4009ab7648c" class="bulleted-list"><li style="list-style-type:disc">SELECT * FROM DimProduct WHERE ColorName = ‘blue’ or ColorName = ‘red’</li></ul><p id="561a3f69-0aa4-4c84-a8e8-6f17fc4aee5a" class="">é melhor fazer assim:</p><ul id="cbb24cf3-81a4-4bbc-91b1-72c3ceb5f05f" class="bulleted-list"><li style="list-style-type:disc">SELECT * FROM DimProduct WHERE ColorName IN (’red’, ‘blue’)</li></ul></details></li></ul><ul id="b5c8de0d-3094-4327-9516-bb63cb19b527" class="toggle"><li><details open=""><summary>WHERE LIKE (procura palavra no meio da frase)</summary><ul id="d0508f44-c07c-4558-954a-6f52075ddb26" class="bulleted-list"><li style="list-style-type:disc">SELECT * FROM DimProduct WHERE ProductName LIKE ‘%MP3 Player%’<p id="96fdb7d3-2852-494b-89f1-62a9621032a2" class="">(retorna qualquer linha de ProductName que tenha a frase ‘MP3 Player’ no meio dela)</p></li></ul><ul id="63ae292f-8882-4130-a700-b87102762c7a" class="bulleted-list"><li style="list-style-type:disc">SELECT * FROM DimProduct WHERE ProductName LIKE ‘MP3 Player%’<p id="8c641670-a1a8-4b57-be4a-365c553f127e" class="">(retorna qualquer linha de ProductName que tenha a frase ‘MP3 Player’ no começo dela)</p></li></ul><ul id="b74977ed-00cb-4475-886d-82f3e87b39bb" class="bulleted-list"><li style="list-style-type:disc">SELECT * FROM DimProduct WHERE ProductName LIKE ‘%MP3 Player’<p id="cf1677ac-3ae8-417d-a8fc-40ff1f87b95a" class="">(retorna qualquer linha de ProductName que tenha a frase ‘MP3 Player’ no final dela)</p></li></ul><p id="623e4893-515a-4846-a80b-5aacd4f4c1d9" class="">
-</p><p id="6a078d79-7676-4131-83c5-cddc2dda2799" class="">
-</p></details></li></ul><ul id="4404e3e3-2f10-4752-8512-c489356e580a" class="toggle"><li><details open=""><summary>WHERE BETWEEN (entre valores)</summary><ul id="acecb2e4-5324-4f5e-9f54-7032b4f38e35" class="bulleted-list"><li style="list-style-type:disc">SELECT * FROM DimProduct WHERE Price BETWEEN 50 AND 100</li></ul><p id="5ee9cf97-ec80-4d50-bbff-a3c5ce34de02" class="">      (selects all products from DimProduct where the                      price is between 50 and 100)</p></details></li></ul><ul id="9d1286b1-3986-4c11-a4b1-7e2f6b5e992d" class="toggle"><li><details open=""><summary>WHERE IS NULL (nulo)</summary><ul id="27e42790-d297-45e6-8f08-782284f840cf" class="bulleted-list"><li style="list-style-type:disc">SELECT * FROM DimProduct WHERE Price IS NULL</li></ul><p id="eadf6394-706a-4fec-916e-bb2f6ffb26fa" class="">(selects all products from DimProduct where the price is not specified or unknown)</p></details></li></ul></details></li></ul><ul id="59375628-5e8c-4da8-b87e-506c86273adf" class="toggle"><li><details open=""><summary>SUM / COUNT / COUNT + DISTINCT</summary><p id="547ad63a-193b-48d8-814f-0cbebe40c271" class="">(soma todos os valores na coluna Price da tabela DimProduct)</p><ul id="a5151e49-28c4-4e75-b224-2ace6ed78c20" class="bulleted-list"><li style="list-style-type:disc">COUNT: esta cláusula é usada para contar o número de linhas em uma determinada tabela. Por exemplo:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="02ae4679-ac80-49f0-a61c-b51ee7c7b1cb" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">  - SELECT COUNT(*) FROM DimProduct
-</code></pre></li></ul><p id="0665ceeb-583b-4721-8dc9-45b1b75830dd" class="">(conta o número total de linhas na tabela DimProduct)</p><ul id="187a1777-518b-4abb-ae7c-cdbecafd2245" class="bulleted-list"><li style="list-style-type:disc">COUNT + DISTINCT: esta cláusula é usada para contar o número de valores distintos em uma determinada coluna em uma determinada tabela. Por exemplo:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3e376c72-a7f6-4571-8775-633e9c8e3295" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">  - SELECT COUNT(DISTINCT ColorName) FROM DimProduct
-</code></pre></li></ul><p id="65ed9c5c-dc56-42c3-944f-488cb7c3b496" class="">(conta o número de valores distintos na coluna ColorName da tabela DimProduct)</p></details></li></ul><ul id="6d702129-0417-41cf-a0de-2f714528d47b" class="toggle"><li><details open=""><summary>MIN / MAX / AVG</summary><ul id="2d14345d-adf0-48e6-accf-49d1efe7272e" class="bulleted-list"><li style="list-style-type:disc">MIN: esta cláusula é usada para encontrar o valor mínimo em uma determinada coluna em uma determinada tabela. Por exemplo:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f6e5dadd-6e5f-44bc-9ce9-f64ff1b4c314" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">  - SELECT MIN(Price) FROM DimProduct
-</code></pre></li></ul><p id="bc4f96d8-7712-473f-b981-fea2261bca2c" class="">(retorna o menor valor na coluna Price da tabela DimProduct)</p><ul id="4a9f8d11-ff6f-4697-90f3-3b252617807c" class="bulleted-list"><li style="list-style-type:disc">MAX: esta cláusula é usada para encontrar o valor máximo em uma determinada coluna em uma determinada tabela. Por exemplo:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="76c24978-d5c4-48b8-95b8-9bbc5f15740e" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">  - SELECT MAX(Price) FROM DimProduct
-</code></pre></li></ul><p id="d48c6ddc-6f96-406d-88cd-e76195ff5f5b" class="">(retorna o maior valor na coluna Price da tabela DimProduct)</p><ul id="07d348db-3eca-4d5a-b074-72c72a7b9041" class="bulleted-list"><li style="list-style-type:disc">AVG: esta cláusula é usada para encontrar o valor médio em uma determinada coluna em uma determinada tabela. Por exemplo:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bc6b0280-7033-4168-a956-ee9cf88e4deb" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">  - SELECT AVG(Price) FROM DimProduct
-</code></pre></li></ul><p id="07c026ec-ce0a-4e42-a6c6-68c38b565898" class="">(retorna o valor médio da coluna Price da tabela DimProduct)</p></details></li></ul><ul id="329e2689-6fe5-42c1-b1bc-498339561049" class="toggle"><li><details open=""><summary>GROUP BY</summary><p id="5eb99a16-22e8-4216-8b0e-90d1e58b8e63" class="">
-</p><p id="c86e62eb-c825-48dd-91fc-f843221dd232" class="">agrupa os dados de acordo com uma categoria desejada</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a1561129-9ceb-46bb-8f40-4ad8c0c22cca" class="code"><code class="language-JavaScript">SELECT
-   COUNT(*) AS &#x27;quantidade de produtos&#x27;
-FROM
-   DimProduct</code></pre><p id="1795db6c-8426-4236-9813-be9464fd7f26" class="">(isso mostra a quantidade total dos produtos em geral)</p><p id="62f64aa5-5952-444d-a76c-6718adb489d4" class="">
-</p><p id="153b6867-c91a-4c7f-9c8a-f621ea2cab6e" class="">
-</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f975bf9e-7247-4fa8-8220-ffba22f0b692" class="code"><code class="language-JavaScript">SELECT
-   BrandName AS &#x27;nome da marca&#x27;,
-   COUNT(*) AS &#x27;quantidade de produtos&#x27;
-FROM
-   DimProduct
-GROUP BY BrandName</code></pre><p id="5f60505d-172e-4757-9fc7-20449febaf78" class="">(já isso, mostra a quantidade total dos produtos em separados pela marca, então a soma de todos vai ser a quantidade total em geral)</p></details></li></ul><ul id="5893c7cc-ef50-40da-a8e4-2da12f0a8599" class="toggle"><li><details open=""><summary>GROUP BY + WHERE / GROUP BY + HAVING</summary><p id="1a95af5c-ea0c-4c9f-baf5-06f9b86a4847" class="">O WHERE é usado pra aplicar um filtro antes da operação, então isso pode alterar a contagem</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3ee3f600-b935-44b7-a253-596cfb37babd" class="code"><code class="language-JavaScript">SELECT
-   BrandName AS &#x27;nome da marca&#x27;,
-   COUNT(*) AS &#x27;quantidade de produtos&#x27;
-FROM
-   DimProduct
-WHERE BrandName = &#x27;Litware&#x27;
-GROUP BY BrandName</code></pre><p id="7e13d576-7b21-45c9-b1a1-1846ff376bac" class="">(isso vai selecionar a quantidade de produtos apenas da marcar Litware)</p><p id="e1cdb03c-eb72-4445-9c97-f17b8720aab3" class="">
-</p><p id="721cdc86-5d15-4075-82ef-a31abf2ee34c" class="">O HAVING é usado pra aplicar um filtro após a contagem</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0e87ee6f-e5e7-45cc-accd-aa8e646c99fb" class="code"><code class="language-JavaScript">SELECT
-   BrandName AS &#x27;nome da marca&#x27;,
-   COUNT(*) AS &#x27;quantidade de produtos&#x27;
-FROM
-   DimProduct
-GROUP BY BrandName
-HAVING COUNT(*) &gt; 100</code></pre><p id="7c0bc741-e20d-4531-ab11-cd0a98141d22" class="">(isso vai selecionar após a contagem de cada marca, apenas as marcas e respectivas quantidades maiores que 100)</p></details></li></ul><ul id="abddf942-edee-4203-8ad1-46cd3067e8cb" class="toggle"><li><details open=""><summary>JOIN</summary><p id="e90b559f-a548-42d7-ad2a-767ad25401a5" class="">(permite interligar mais de uma tabela) </p><p id="1c62db37-3faf-4912-b62a-8fdf391fd7f0" class="">(usa ids ou chaves para achar informações de outras tabelas que detalham essas chaves) (ex: id 1 de uma pessoa e em outra tabela tem o id e o nome, número, cep etc.)</p><p id="d07666f0-f472-4164-9f4b-94c81fc4272b" class="">(colunas em comum)</p><p id="459f1bcb-3454-44dd-96ee-25647b6abd02" class="">
-</p><ul id="32265e82-a863-477c-9b0d-134a4e1e2ca2" class="toggle"><li><details open=""><summary>CHAVE PRIMARIA X CHAVE ESTRANGEIRA</summary><figure id="8565f5d8-d787-4ed8-a792-a132b58067f9" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-09_121301.png"><img style="width:1920px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-09_121301.png"/></a></figure></details></li></ul><ul id="053d0b1f-b7fe-4e1f-9030-4e6d044ad887" class="toggle"><li><details open=""><summary>TABELA FATO X TABELA DIMENSÃO</summary><figure id="85bcbc38-d626-4cba-bf4d-f147d2f00d05" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(171).png"><img style="width:1920px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(171).png"/></a></figure></details></li></ul><ul id="e1e1045f-797a-49b2-832f-61369ef0127a" class="toggle"><li><details open=""><summary>LEFT (OUTER) JOIN</summary><figure id="d5e877be-14ea-497f-b44f-f9a37f47c50f" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(172).png"><img style="width:1920px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(172).png"/></a></figure></details></li></ul><ul id="65b9b31c-74af-4665-8fc2-7259715d0f1d" class="toggle"><li><details open=""><summary>RIGHT (OUTER) JOIN</summary><figure id="6cb89b95-f399-4339-8385-56cbd9a14fbb" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(173).png"><img style="width:1920px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(173).png"/></a></figure></details></li></ul><ul id="4d9a1d63-43a6-4f62-86ac-a2966a808e64" class="toggle"><li><details open=""><summary>INNER JOIN</summary><figure id="8b4c3337-aab9-49d9-af8b-f9bc51c4f6e6" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(174).png"><img style="width:1920px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(174).png"/></a></figure><figure id="eed77e8d-9cfe-4e5d-a4e6-25c9ac5647f5" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(176).png"><img style="width:1920px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(176).png"/></a></figure><figure id="001ef30b-3784-4bfd-bb00-cd92d9aaaac2" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(177).png"><img style="width:1920px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(177).png"/></a></figure></details></li></ul><ul id="2db93540-2624-40d2-99b5-ddd2bd85bbbd" class="toggle"><li><details open=""><summary>EXEMPLO</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7e0c451e-68ab-49e9-bbe9-4b00f5601dcb" class="code"><code class="language-JavaScript">SELECT TOP(100) * FROM DimProduct
-SELECT TOP(100) * FROM DimProductSubcategory</code></pre><p id="bf54e714-5359-4ca9-9713-12f0f6580d7a" class="">essas duas tabelas tem chaves em comum, como pode-se observar</p><figure id="a792be51-3e76-44fd-a90e-cb370dda4264" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-09_234950.png"><img style="width:1424px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-09_234950.png"/></a></figure><p id="1b2b6215-5fe5-4fa3-b94f-eb8b281d88f5" class="">
-</p><p id="0aa9562c-5578-40fe-b27f-4da2db02fedd" class="">vou selecionar as colunas que eu  quero da primeira e a correspondente ao id da segunda, deixando claro que o ProductSubcategoryKey que eu quero substituir vem do dimproduct</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="428c2863-e218-46a3-a72f-faca6ccf241a" class="code"><code class="language-JavaScript">SELECT
-   ProductName,
-   ProductDescription,
-   BrandName,
-   DimProduct.ProductSubcategoryKey,
-   DimProductSubcategory.ProductSubcategoryName
-FROM
-   DimProduct
-LEFT JOIN DimProductSubcategory
-   ON DimProduct.ProductSubcategoryKey = DimProductSubcategory.ProductSubcategoryKey</code></pre><figure id="e816518e-cb1d-46d4-b872-3308be2c3e18" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-09_235019.png"><img style="width:905px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-09_235019.png"/></a></figure></details></li></ul><p id="612ea066-933f-4473-ace3-c94dd43493a2" class="">
-</p><p id="50461442-e83a-4395-8b7e-3bdbfe3e9d09" class="">
-</p><p id="223301a4-7810-4854-9c1c-59c1c3b66b37" class="">
-</p><p id="9c9088d2-bddb-4b90-a18b-f07fe9bcc58f" class="">
-</p><p id="6f284beb-d9e8-45f8-8c29-0ec12d13b17e" class="">
-</p></details></li></ul><ul id="b967ec73-3a0c-4c0f-94c7-b4f0618a4b2d" class="toggle"><li><details open=""><summary>CROSS JOIN</summary><p id="e3808944-a508-4f13-8ece-51b671172af8" class="">faz um produto cartesiano em duas tabelas</p><figure id="58e7fb44-69d9-4365-875e-fc987e5ca98c" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled.png"><img style="width:1920px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled.png"/></a></figure></details></li></ul><ul id="9aeb8c3b-0667-4a7e-afc8-2b06cd120698" class="toggle"><li><details open=""><summary>MÚLTIPLOS JOINS</summary><p id="72d45e6d-0b4a-4570-a098-614a6c1143a8" class="">quando não da pra fazer a transição do join direto de uma tabela a outra, precisssando de uma intermediária</p><p id="bb0f58d0-68fc-414d-b038-6cd93c7bd15e" class="">
-</p><figure id="de0ff319-398a-4a4a-b57c-09f5353ac6af" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%201.png"><img style="width:1232px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%201.png"/></a></figure><figure id="d4fabe4f-8b16-4ae3-9c5e-91af67190e57" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-10_000152.png"><img style="width:606px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-10_000152.png"/></a></figure><div><p id="cf898f4e-5104-4ef5-b725-f875b93b6490" class="">aq por ex no poductsubcategorykey</p><figure id="4f2666d1-6a8f-4823-a8d2-715ff89c9ad1" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%202.png"><img style="width:1188px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%202.png"/></a></figure></div></details></li></ul><ul id="2270312f-e817-4565-8e74-22730dce0418" class="toggle"><li><details open=""><summary>UNION e UNION ALL</summary><p id="b78cdd89-e851-4f5e-abd6-a5d9442ad295" class="">union é usado quando duas tabelas tem exatamente a mesma estrutura e da pra juntar elas (junta e remove duplicados)</p><figure id="4bbf8016-28ee-40d6-8d30-d5e185bd0178" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%203.png"><img style="width:1158px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%203.png"/></a></figure><figure id="85f9b9b4-1820-4956-b13e-ce8481be471f" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%204.png"><img style="width:299px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%204.png"/></a></figure><figure id="d38cd729-21f2-481f-903e-df25517f588f" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%205.png"><img style="width:1237px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%205.png"/></a></figure><p id="bd8eb7a9-d700-41ae-942c-a0ebd48fb824" class="">
-</p><p id="1fdf813a-662f-478a-8425-812b40487e41" class="">UNION ALL  é quase a mesma coisa mas não remove duplicados</p><p id="18f5e44c-1f6a-4c1b-898d-99ec8a60794e" class="">
-</p></details></li></ul><ul id="8169e385-9633-4f5b-93c2-740963b11a55" class="toggle"><li><details open=""><summary>GROUP BY + JOIN</summary><p id="2bb80c0d-07ba-4e92-a05a-3c3e0625c332" class="">O JOIN vem antes do GROUP BY e não tem nenhum mistério</p><p id="0e8c6da3-c628-4f00-ba04-3ddc2cfebb68" class="">
-</p><figure id="b1904126-817b-498f-9769-2498e2c637df" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%206.png"><img style="width:1511px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%206.png"/></a></figure><p id="ec0f2fae-4923-4dca-bfdf-0cc3ec3f9c37" class="">
-</p></details></li></ul><p id="dd5ef744-92b8-4b6c-9e4a-7d796943b133" class="">
-</p><p id="2a1bcb9a-729d-48d3-a648-2bb7867ace2c" class="">
-</p><p id="84431686-bd62-4916-94f2-ce1db5494e3f" class="">variaveis</p><p id="d5274582-8710-49bb-843e-d9115678fd25" class="">
-</p><ul id="dde06315-7c1f-4466-9b61-a3ea45c2d18e" class="toggle"><li><details open=""><summary>SQL_VARIANT_PROPERTY</summary><p id="01189ea6-55da-4ec5-85fa-77827839dd80" class="">ver qual o tipo </p><p id="9fa6b9ac-44be-4cdd-9778-9c9f982aec09" class="">select SQL_VARIANT_PROPERTY(10, ‘BaseTye’)  </p><p id="b84b50c2-2b7d-4cb0-a073-4fe99b96eb33" class="">int</p></details></li></ul><ul id="d0174ca4-0feb-45b2-a33c-fe7cd4270813" class="toggle"><li><details open=""><summary>CAST</summary><p id="b5f82f77-18b6-426e-af20-4323a4d23458" class="">funcao que especifica o tipo do dado</p><p id="fe140be7-2056-45de-a197-c80054b85808" class="">int: inteiro</p><p id="8781b842-4769-4e66-afc7-f9cd8a339de8" class="">float: decimal</p><p id="6d412988-9b6b-4e9d-a280-a0d514c4bdca" class="">varchar: string/texto</p><p id="e660a8f2-c4f1-4414-b8c8-3e754eb93ce4" class="">datetime: data e hora</p><p id="64f03eda-e762-47dc-9160-d44c38c76e57" class="">
-</p><p id="a3683135-7008-48d6-8f9d-001796263076" class="">SELECT CAST(1.45 AS INT)</p><p id="7a2f15ee-0463-4bd4-82f6-e438708c95e8" class="">força o sql a entender o 1.45 como um int</p></details></li></ul><ul id="6d57df8b-a24f-47af-a444-8f6da377c1af" class="toggle"><li><details open=""><summary>FORMAT</summary><p id="23cc61de-8c11-4f00-9d8f-9d23b5afebb8" class="">select format(valor, formato)</p><p id="b3875ea0-bf50-4854-b927-c110ddb0e516" class="">
-</p><p id="3d3c4718-3ad1-4a00-8f35-138060dbac5f" class="">SELECT FORMAT(1000, ‘N’)</p><p id="0818aa3c-01a0-4aee-b13c-0694b17226a1" class="">(normal) retorna 1.000</p><p id="49fb815d-752d-40d9-8b1f-bcb6cd0865ba" class="">SELECT FORMAT(1000, ‘G’)</p><p id="d72de531-da11-453b-bc44-9ac32d6b93cd" class="">(generico) retorna 1000</p><p id="75492a0d-d8e4-41d9-bb15-5d2de3f214b9" class="">
-</p><p id="4a3bdcf6-17e5-4b4c-bcdc-e106f1363479" class="">SELECT FORMAT(1234456789, ‘###-##-####’)</p><p id="1892447e-4eee-41dd-bd67-ca10986b9684" class="">retorna 123-45-6789</p><p id="4cf47f6b-43f1-4eec-b610-768280f82944" class="">
-</p><p id="0c6cad18-a766-48a4-a325-9e244748963b" class="">SELECT FORMAT(CAST(’21/08/2021’ as DATETIME), ‘dd/MM/yyyy’)</p><p id="9494048a-d15b-4d95-98b7-4e18910ec3e0" class="">retorna 21/08/2021</p><p id="27e61ea2-5c8c-4949-9eed-6afb7e87e08e" class="">
-</p><p id="6bb255ae-ce27-4a0c-bffd-9cf9df0e617f" class="">SELECT FORMAT(CAST(’21/08/2021’ as DATETIME), ‘dd/MMMM/yyyy’)</p><p id="ccd48427-de84-4086-a35b-582818210108" class="">retorna 21/agosto/2021</p><p id="bbc6c728-24c8-4b47-8b56-b7f1380b90b1" class="">
-</p><p id="66f561d0-ed7d-45c6-9f3a-57b8bff003b6" class="">SELECT FORMAT(CAST(’21/08/2021’ as DATETIME), ‘yyyy’)</p><p id="aa57c6bb-2c97-4dc8-87a7-edeb7ce7cc7f" class="">retorna 2021</p><p id="70de8634-373a-4dc7-bf4d-14026e2d14b6" class="">
-</p><p id="90bf327e-53e4-4aeb-a0ce-ef7f763214bd" class="">
-</p><p id="0711270e-92ea-4d24-8534-23706c3336c4" class="">
-</p></details></li></ul><ul id="02816e33-194b-4afa-8445-67d3efebccaa" class="toggle"><li><details open=""><summary>ROUND</summary><p id="66d1509d-357c-4f3e-92f9-eada5e722c65" class="">arredonda</p><p id="8a4e92ea-ef2c-4ae3-a124-f88cae9e0bbb" class="">
-</p><p id="bd5fdfee-40b5-449d-bc46-2984441602b7" class="">SELECT ROUND(13.73912, 2)</p><p id="29add073-7407-4933-9e31-aaf5250d8790" class="">retorna 13.34</p><p id="a5de0aca-2b0b-422c-b289-6fe59fdcafe8" class="">
-</p><p id="b697efda-23f8-4405-8284-2efdd321f1e5" class="">SELECT ROUND(13.73912, 2, 0)</p><p id="5c553ec8-507c-47c8-959a-5213b7bfef94" class="">retorna 13.74</p><p id="f8be8e5a-eb0f-4be3-9172-e820c33f809a" class="">
-</p><p id="b03333db-4f0c-4c7a-8d0d-9a17b767388c" class="">SELECT ROUND(13.73912, 2, 1)</p><p id="33c638d4-2fc6-400a-8e21-342aa3bcbd3c" class="">retorna 13.73</p></details></li></ul><ul id="d67f3fb4-8b49-40df-b059-8fbaf398bc4c" class="toggle"><li><details open=""><summary>FLOOR</summary><p id="3ee01dc7-655d-4eb8-b958-b83e5aca675e" class="">arredonda pra baixo</p><p id="b1dd220d-cf43-4b2b-b1d8-5eb9b024d1e6" class="">
-</p><p id="e87fcb9d-15a3-4bdf-bc04-535b7d8c59b3" class="">SELECT ROUND(13.73912)</p><p id="03b3b57c-1a34-455a-85d8-bfba993368f0" class="">retorna 13</p></details></li></ul><ul id="4e1ca021-b084-45f2-a5dd-0163bc60dd36" class="toggle"><li><details open=""><summary>CEILING</summary><p id="cae00727-5b8a-4c05-bbd9-4aad0d725352" class="">arredonda pra cima</p><p id="96340e79-e92a-49d3-8635-ff3be56ff5da" class="">
-</p><p id="a0195b2a-7f67-47d5-aa89-cf337a340e93" class="">SELECT ROUND(13.73912)</p><p id="1ad81d57-3c0f-4c16-9e0f-1d427e92b73c" class="">retorna 14</p></details></li></ul><ul id="e479e4f4-ed36-4722-823d-f37bfdd903e4" class="toggle"><li><details open=""><summary>DECLARE/SET/SELECT</summary><p id="d04563b8-0504-4f55-b390-0981b221113e" class="">DECLARE @var INT</p><p id="eefcb9f9-99b6-43ba-a05d-ed896017eaf6" class="">SET @var = 10</p><p id="eadba931-c49f-4123-bd84-d8d0082c82f4" class="">SELECT @var </p><p id="cbcb7106-0dbe-43ae-8c1e-3f4481e9453e" class="">
-</p><p id="d41404d3-57a3-486d-aae1-c94af982f8a5" class="">da pra fazer atribuição direta tbm</p><p id="509069b5-7d33-40f9-a43d-533841149cde" class="">DECLARE @var INT = 10</p></details></li></ul><ul id="4b6a2bdc-2950-42be-bee8-260b5766aa70" class="toggle"><li><details open=""><summary>PRINT</summary><figure id="1674bab3-92eb-4aac-8c73-1a90ebe26f01" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%207.png"><img style="width:734px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%207.png"/></a></figure></details></li></ul><ul id="3c2fceda-ae9b-470f-bd3b-f9d6e30ecf21" class="toggle"><li><details open=""><summary>variáveis dentro da seleção direto a tabela</summary><figure id="ed5d991f-6adc-4235-9684-fec078e8948c" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%208.png"><img style="width:1524px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%208.png"/></a></figure><figure id="e9fad893-7882-4bb9-9a69-46884027574c" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%209.png"><img style="width:1452px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%209.png"/></a></figure></details></li></ul><ul id="d11bc9af-6275-442f-8610-6e1f2d3bd6cd" class="toggle"><li><details open=""><summary>acumular valores dentro de uma variável</summary><figure id="3b68900c-9980-47f9-95f8-381da019ed80" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2010.png"><img style="width:888px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2010.png"/></a></figure><p id="96c966af-2f14-4d27-a7cc-2bd8327517cb" class="">CHAR(10) - pula uma linha</p></details></li></ul><ul id="3031913e-45a1-4592-8a6a-f88af9dd11f9" class="toggle"><li><details open=""><summary>variáveis globais</summary><figure id="a08f79b1-28f7-487f-aab6-3ab018ca1ff6" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2011.png"><img style="width:1185px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2011.png"/></a></figure></details></li></ul><p id="6b5fc09b-71f9-40aa-bea4-4958a0a141aa" class="">
-</p><p id="3f49fda0-a97d-4039-8471-fb18ea0646ed" class="">
-</p><p id="0d3b0d53-7d2f-458b-9cc9-0feaa41f94ed" class="">manipulação de textos e datas</p><p id="73065e3d-6015-40f2-8ab4-bf1779e7c447" class="">
-</p><ul id="2ab2b995-753f-407e-85b3-57d154e0b6ca" class="toggle"><li><details open=""><summary>LEN/DATALENGTH</summary><p id="b31aa1db-ff67-4d42-aa5d-c94e249cbb27" class="">len(”abc”) retorna 3</p><p id="25183f0b-ccc5-41f2-b353-a2cef3f463e3" class="">datalength(”abc”) retorna 3</p><p id="45d93835-9a8a-4973-acdd-9fab4e304323" class="">
-</p><p id="9a4adad1-2d82-4f22-9f8b-9e2836a3174f" class="">len(”abc  ”) retorna 3</p><p id="3cac6b6c-7c52-4fad-9822-4f94e92ebda4" class="">datalength(”abc  “) retorna 5</p></details></li></ul><ul id="d0b5b788-a275-440d-a2d4-409fbb7e4ff3" class="toggle"><li><details open=""><summary>CONCAT</summary><p id="35fea7fc-55b7-4a22-8b6d-0cee0057f045" class="">CONCAT(firstname, lastname) retorna literalmente o nome todo junto</p><p id="9126cfec-40d6-4364-a707-ec15429b909a" class="">CONCAT(firstname, ‘ ‘, lastname) retorna literalmente o nome todo certo</p></details></li></ul><ul id="652207c8-dad3-4749-b76b-0e996d7fce47" class="toggle"><li><details open=""><summary>LEFT/RIGHT</summary><p id="4a9ee077-39a4-4710-84f1-2324bec64c19" class="">left extrai uma determinada qtd de caracteres de um texto, da esquerda para a direita</p><p id="c9003995-4477-4799-ac36-9a800b800eac" class="">right extrai uma determinada qtd de caracteres de um texto, da esquerda para a direita</p><p id="55e4a7ec-0406-4eb7-9d34-8ffd09b2c3d6" class="">
-</p><p id="3bd0f30e-0c40-4c7a-95bc-aec7bed70d40" class="">select LEFT(‘produto123’, 7)   retorna produto</p><p id="1c2b6369-ba2f-47a9-ba6e-a055c700a9c9" class="">select RIGHT(‘produto123’, 3)   retorna 123</p><p id="872cca8c-212a-45f5-922a-270da45fdfda" class="">
-</p></details></li></ul><ul id="57d49151-8b8a-4393-b50c-6b32599e1ea0" class="toggle"><li><details open=""><summary>REPLACE</summary><p id="56fd5b63-d629-4515-b306-50cb0740a9a0" class="">select replace(”O excel é o melhor”, “excel”, “sql”) </p><p id="be4652ec-4122-4346-b6ef-e2207e13c9e3" class="">       retorna “o sql é o melhor”</p></details></li></ul><ul id="94744707-91c1-4e0f-a5f3-9765ee5b2b65" class="toggle"><li><details open=""><summary>TRANSLATE</summary><p id="834bd1e7-addb-49df-a777-48e29b319b61" class="">substitui cada caractere na ordem encontrada no texto</p><figure id="efcff4f2-eb3d-4798-b1e0-1081abda0aed" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2012.png"><img style="width:1171px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2012.png"/></a></figure><p id="735185d3-eae6-4b24-b431-3c31b8b62e50" class="">
-</p></details></li></ul><ul id="265a5fd1-9502-4515-8035-1caf7d1e8bfb" class="toggle"><li><details open=""><summary>STUFF</summary><p id="0d65a0a0-30d3-4e9e-a97c-9d00052f8548" class="">substitui qualquer texto com uma quantidade de caracteres limitados, por um outro texto</p><figure id="2dc51156-48d6-450f-8d0a-baa9c7be2be3" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2013.png"><img style="width:1152px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2013.png"/></a></figure></details></li></ul><ul id="6477ec64-0305-4a93-9563-bae5dd00f378" class="toggle"><li><details open=""><summary>UPPER /  LOWER</summary><p id="c2a8e967-34f2-429d-b908-1054e9189c49" class="">meio obvio…</p><p id="80629922-3e0c-4c90-ae72-c2afd55164e2" class="">
-</p><p id="c5a913ef-aca5-4c96-8e2f-bb94f5a762bc" class="">upper(’abc’) retorna ABC</p></details></li></ul><ul id="5278d872-4850-4a6a-afa6-6f4d7049d025" class="toggle"><li><details open=""><summary>CHARINDEX</summary><p id="afea5f89-15b1-44e9-9999-17e529723fb8" class="">SELECT CHARINDEX(’M’, ‘Raquel Moreno’)  </p><p id="5a5d1a94-2a93-4e8e-a406-3ce02bb5c657" class="">     retorna 8</p></details></li></ul><ul id="f3ffc6fd-a0c6-43b2-8ecb-0daf8c905ca1" class="toggle"><li><details open=""><summary>SUBSTRING</summary><p id="850aa6cd-532a-4d9e-84f5-1f15b0adb366" class="">SELECT SUBSTRING(”Raquel Moreno”, 8, 6) </p><p id="bb5a4cf9-3037-42f7-baf0-d02516580fdb" class="">      retorna ‘Moreno’</p></details></li></ul><ul id="7f91db16-f97b-42f3-aa7c-215a566ebc8a" class="toggle"><li><details open=""><summary>TRIM / LTRIM / RTRIM </summary><p id="ada6e4ee-35df-4810-a794-e3d80b720db0" class="">trim - tira espaço adicionais a esquerda e a direita do texto</p><p id="b361c0fe-e07c-4f85-a569-4ab21a8128f7" class="">ltrim - tira espaço adicionais a esquerda do texto</p><p id="afb191c3-2b62-4f22-b8b9-c53c64f3a19a" class="">rtrim - tira espaço adicionais a direita do texto</p></details></li></ul><ul id="2d50f030-ce36-4ad6-8306-6bacbf89e70c" class="toggle"><li><details open=""><summary>DAY / MONTH / YEAR</summary><p id="1071f4d1-9a6b-4e82-912d-1ed5c9d8861b" class="">@vardata  = ‘23/03/2021’</p><p id="b812d102-1080-4106-97bf-82c609f98155" class="">
-</p><p id="d5cf1739-9f6d-4310-91dd-5e51fc206dbc" class="">DAY(@vardata) </p><p id="2f0eb02e-2167-444a-b97c-e325bcd4fcdf" class="">   retorna 23</p><p id="9bb3d188-f894-4e51-809b-8b318b6c475c" class="">MONTH(@vardata)</p><p id="65baccbd-6f3a-4228-a1af-30d490c0d669" class="">   retorna 03</p><p id="9e2e2113-dcb5-4226-a6a0-987ba0cffb27" class="">YEAR(@vardata) </p><p id="8d410c89-7abb-4a5d-945a-3b7620102620" class="">   retorna 2021</p></details></li></ul><ul id="45ca974d-aef3-466f-96f3-b00b50728014" class="toggle"><li><details open=""><summary>DATEFROMPARTS</summary><p id="deeda51c-f517-4a94-9162-26dc95d576e6" class="">@vardia = 13</p><p id="9f764eaa-6f6f-442e-a57f-8cb7e4d36a02" class="">@varmes = 2</p><p id="1571da9e-f0c2-4dcc-a64c-d29cf4636d54" class="">@varano = 2021</p><p id="f44ead23-cd13-46db-812f-cd3a88ce9fc7" class="">
-</p><p id="7a12075c-a772-4479-a726-f982abf8954c" class="">select DATEFROMPARTS(@vardia, @varmes, @varano) </p><p id="5e10313f-0c1f-4d2e-a084-b9d6da18e27a" class="">    retorna 12/02/2021</p></details></li></ul><ul id="91ad75a2-265b-4532-8a2d-83a6d0adcd1a" class="toggle"><li><details open=""><summary>GETDATE / SYSDATETIME  / DATENAME E DEATEPART </summary><figure id="60fef081-6dba-46f7-9ec4-cb74267075e0" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2014.png"><img style="width:1311px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2014.png"/></a></figure><figure id="ec308e59-77e6-43b0-b754-660ec3c172aa" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2015.png"><img style="width:817px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2015.png"/></a></figure></details></li></ul><ul id="b49a81dd-1a91-4c67-9cd0-843b63f23207" class="toggle"><li><details open=""><summary>DATEADD / DATEDIFF0</summary><figure id="0a266da4-02ae-48e1-9c2f-9ed0c9402784" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2016.png"><img style="width:1320px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2016.png"/></a></figure></details></li></ul><p id="046dcd60-d141-488d-a587-0b982411bcc7" class="">
-</p><p id="fcf7fa75-1c48-40f7-8330-2346aa837f0f" class="">
-</p><p id="dff8e222-8747-489b-ad5b-ded5dc4391b8" class="">funcoes condicionais</p><p id="f82ba357-74c2-4f16-9312-9a8d13bdb706" class="">
-</p><ul id="2e0a35ae-57be-406c-b409-012252dc4fbf" class="toggle"><li><details open=""><summary>CASE</summary><p id="cd78b3c5-6af2-40e4-a044-0db7e738c82f" class="">CASE </p><p id="905a1007-c53d-4f27-839a-0c12ee1700c6" class="">        WHEN teste THEN ‘resultado1’<div class="indented"><p id="991b8f36-9041-4363-9302-2b79f393063c" class="">   ELSE ‘resultado2’</p></div></p><p id="9917fba2-914c-43c9-ba0c-eb44a87a5b5e" class="">END</p></details></li></ul><ul id="4b5ff9c7-bdfd-467e-91e9-b124a5c20e24" class="toggle"><li><details open=""><summary>IIF</summary><p id="9a224812-c00b-4610-8ea8-17156aee8ce4" class="">IIF( condicao, secondicao, senao)</p></details></li></ul><ul id="6abd53ac-532c-42c7-9093-a90eba34676a" class="toggle"><li><details open=""><summary>ISNULL</summary><p id="8b50ce32-7097-497a-a1d2-babfa10cb3f8" class="">ISNULL(analisar, se for null vai trocar o atualisar)</p></details></li></ul><p id="fa7ff003-9fbb-42ce-a0d1-e53d1fbdfb89" class="">
-</p><p id="b02d6499-c5fc-436e-a490-7e8afe3a1a82" class="">
-</p><p id="61bc8bdc-d0f5-4c9e-8621-d2ee9e5ff1be" class="">sql views</p><p id="57fe7ee6-b8ce-487c-9f9f-26b2d7182f38" class="">
-</p><p id="e2687841-f6c6-4884-8b43-16229277c08b" class="">
-</p><ul id="1304f903-b6ec-435e-8845-0403518ac622" class="toggle"><li><details open=""><summary>pq criar views</summary><figure id="cfc42bea-9654-46e4-93c0-410dd67d6679" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2017.png"><img style="width:866px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2017.png"/></a></figure><figure id="1aecc8d3-aeb4-4182-9e39-7d237a810708"><div class="source"><a href="https://www.notion.soundefined"></a></div></figure></details></li></ul><ul id="5a29aca2-0667-4e84-9ab0-b71a8f597b30" class="toggle"><li><details open=""><summary>CREATE VIEW</summary><p id="5487d704-2969-4596-92c9-e1f0861d3aaa" class="">CREATE VIEW nomeview AS SELECT …</p><p id="3b7cc75d-8da3-43f7-a77d-5491ec1c9bfa" class="">
-</p><p id="23e2eead-ba3c-48f8-b5b9-49f14f5f191d" class="">colocar GO no final ou começo do comando para o sql saber onde começar/terminar</p><p id="dd7f435d-b9cb-43b5-9604-c3b756202f94" class="">
-</p><p id="ef07c62c-eeb9-4f58-921a-3398b04a1f53" class="">views sao armazenadas na pasta exibições</p></details></li></ul><ul id="de5c78b5-8a23-494e-b6d0-35bec91d15ce" class="toggle"><li><details open=""><summary>USE</summary><p id="5130f2d4-4d36-4a8d-ac6d-3dad2c55900d" class="">especifica em qual banco de dados o view tem q ser criado</p><p id="9ab7de4a-1bce-41df-be62-07e84e38b252" class="">
-</p><p id="e264efc5-07ab-496c-b714-fd197cd26b18" class="">USE teste</p></details></li></ul><ul id="775d1506-fc8a-49eb-b0ea-d18c138a783a" class="toggle"><li><details open=""><summary>ALTER VIEW</summary><p id="54c93d5c-e817-406a-951b-a6dbe378f456" class="">GO</p><p id="10f7dd70-62ac-45d6-a6cb-8e8d5531126e" class="">ALTER VIEW teste AS</p><p id="11d3a2ce-d49b-43a1-a1fb-283df0392cb7" class="">SELECT … </p><p id="dab303f8-3919-4e7a-9c9c-613dcb549987" class="">GO</p></details></li></ul><ul id="480e9882-0c89-4d4d-91af-09ba76c93e38" class="toggle"><li><details open=""><summary>DROP VIEW</summary><p id="cf28a5c8-e1ce-4f70-ba67-dc8ae1259c22" class="">DROP VIEW teste</p><p id="7bb6244f-b8f2-4550-b037-5f80b0ecd5a5" class="">
-</p><p id="0c3714ae-3cdc-4459-8ebb-a15c92827703" class="">exclui o view teste</p></details></li></ul><p id="46280f13-5999-4718-ab29-316250bb1504" class="">
-</p><p id="bdf29560-b2c3-4b19-bbd8-7c73be167a58" class="">
-</p><p id="54eb23de-84fe-4726-862b-1bd34e7cf735" class="">crud</p><p id="622f749f-9ad2-415d-9589-51842c31b260" class="">
-</p><ul id="19caac12-bec3-47f9-81b0-ab0b68a21efd" class="toggle"><li><details open=""><summary>o que é</summary><figure id="72ef7af0-3c6f-4ca4-9d04-70acd16e44db" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2018.png"><img style="width:525px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2018.png"/></a></figure></details></li></ul><ul id="9e27fd17-da98-47ce-bc9f-94534d9e9cb9" class="toggle"><li><details open=""><summary>CREATE DATABASE</summary><p id="b6d236cb-6692-42d0-90e1-713a9a676dbe" class="">CREATE DATABASE Teste</p><p id="05917172-a8d2-476d-a94d-8a753b73d24b" class="">
-</p></details></li></ul><ul id="856bf768-699c-44e6-8dec-ffbb3072af88" class="toggle"><li><details open=""><summary>DROP DATABASE</summary><p id="de34b99c-ccd9-4138-bcf4-707d1eef6a21" class="">DROP DATABASE Teste</p><p id="bf2fea23-4dc6-4700-9e25-6b9e992e7189" class="">
-</p></details></li></ul><ul id="0be76dcf-7baa-4bc4-a1a0-86ac4beb1a39" class="toggle"><li><details open=""><summary>CREATE TABLE</summary><p id="92332b5c-aab9-4e3b-943c-18fee8e38ae7" class="">USE bancodedados</p><p id="23a026f8-ec45-472f-b8e8-324e18e3a5b0" class="">CREATE TABLE nome_tabela (</p><p id="22e5827f-201c-4dc5-b401-366c18bef3e6" class="">      coluna1 tipo,</p><p id="e6e6be45-d3db-4b89-abcd-b2ee6f0ef57e" class="">      coluna2 tipo,<div class="indented"><p id="fa0bf7c7-6489-42b0-89dd-b1ac9b71d4a5" class=""> coluna3 tipo</p></div></p><p id="e95f8fbe-c02c-4ebb-a34e-559b48ebaca5" class="">  )</p></details></li></ul><ul id="7dae2816-5b2e-47c9-b6b6-866dc997ec54" class="toggle"><li><details open=""><summary>INSERT SELECT</summary><p id="58985cde-f4c3-4fbd-a133-703294d87f3a" class="">INSERT INTO  nome_tabela(coluna1, coluna2, coluna3)</p><p id="ceea0302-f1b9-4668-b585-3e7840282379" class="">SELECT</p><p id="039e33a4-fb23-4749-af91-c2dfeb6b0c4d" class="">      coluna1,<div class="indented"><p id="40edcc6f-a191-4bc8-b8e8-5e1d1ee8bd2e" class="">coluna2,</p><p id="986b7ca3-9b07-42b0-84e5-be5ba44fc2e2" class="">coluna3</p></div></p><p id="e78ce12d-442f-41b7-aeb3-e6c7fda6b04a" class="">FROM outra_tabela</p></details></li></ul><ul id="4ece4dc2-24ff-4734-b12f-9a7e697c5e11" class="toggle"><li><details open=""><summary>INSERT INTO </summary><p id="28ab1fea-8165-47f8-b5b7-1045118dfc34" class="">INSERT INTO  nome_tabela(coluna1, coluna2, coluna3)</p><p id="b7523aef-a730-437b-b364-65414fc83862" class="">      (conteudo1, conteudo2, conteudo3), </p><p id="82d834e5-f0c6-4bcd-b964-702855ac8119" class="">      (conteudo1, conteudo2, conteudo3)</p></details></li></ul><ul id="88f26070-cc43-4b72-83c6-46e01eb3e464" class="toggle"><li><details open=""><summary>UPDATE</summary><p id="060c0fa0-2eaf-4802-8443-9c043fdb4649" class="">UPDATE nome_tabela</p><p id="2af3077e-1365-41cf-9ffd-67062cf3e4bd" class="">VALUES </p><p id="fc92c893-5007-4575-8ec8-9b9900d974d9" class="">SET nome_produto = “sla”</p><p id="81a4e250-7836-4e01-ad84-928818e93992" class="">WHERE  id_produto = 3</p></details></li></ul><ul id="46dfe406-e29d-4e3a-8e6c-cb89ef28b591" class="toggle"><li><details open=""><summary>DELETE</summary><p id="9943c3fb-084c-4167-b4b7-840922e4ff98" class="">DELETE </p><p id="4fb85994-24eb-4479-9de8-2e923bf1c17b" class="">FROM nome_tabela</p><p id="8be57fb6-c102-4e42-b3cf-28a8fff898a4" class="">WHERE coluna1 = ‘sla’</p><p id="5130f4db-775d-49ce-b8b0-a60d1ccd48e2" class="">(deleta um dado)</p><p id="13ed2325-eb57-41e8-bf76-87dd0feeb0c6" class="">
-</p><p id="bde285da-85d9-4bbb-a2db-1ed9933def83" class="">
-</p></details></li></ul><ul id="ada38b2f-a717-46a3-922e-18ec1f710d61" class="toggle"><li><details open=""><summary>DROP TABLE</summary><p id="1a7699ca-c3ee-4aa4-8667-622a72b1ec19" class="">DROP TABLE nome_tabela</p></details></li></ul><ul id="828fd00a-aca3-4df4-9ccb-0ca6ac34e757" class="toggle"><li><details open=""><summary>ALTER TABLE</summary><p id="31350691-aa7b-41fd-ab8f-0146f0b46908" class="">alter table nome_tabela</p><p id="996c017a-33d5-4b87-813a-86b2c46ae76c" class="">ADD coluna4 tipo</p><p id="525d0701-4dbf-443c-af18-d57c59e9de87" class="">(ficam com valor NULL)</p><p id="eb324b69-cc18-43ca-b512-3f41f39e0c4a" class="">
-</p><p id="97023c6e-c5d1-45e8-9275-0dad1e363b77" class="">ALTER TABLE nome_tabela</p><p id="2844bcbd-027a-46d5-8ce2-121ae7b98e8c" class="">ALTER COLUMN coluna1 tipo</p><p id="d23a5f1b-d704-4fd0-8444-d1c87a8e0e36" class="">(muda o tipo da coluna1)</p><p id="6f0d06d2-7d48-46b4-b49e-a6e1a0cbe258" class="">
-</p><p id="fa8072a1-52de-4925-bc8b-ec9c36bae828" class="">ALTER TABLE nome_tabela</p><p id="94480903-38d8-44b5-a1ad-487f84ddd0ab" class="">DROP COLUMN coluna1 </p><p id="81816ffe-5ebb-4562-a03c-506aa557ae0f" class="">(apaga coluna1)</p></details></li></ul><p id="79c7ec7b-8092-4e87-9206-147644776309" class="">
-</p><p id="9fed0918-9016-4c02-85a1-4903da3c81de" class="">
-</p><p id="b99587e1-7801-4a26-a581-2139d1ec75aa" class="">subqueries</p><p id="50f9abc5-8668-47ad-a2be-5228c91a9368" class="">
-</p><ul id="61fd455a-ca4c-4154-8156-ab00f997fb25" class="toggle"><li><details open=""><summary>o que é</summary><figure id="769087f7-090d-48ce-9c90-d6be7849f0e3" class="image"><a href="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2019.png"><img style="width:1474px" src="SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2019.png"/></a></figure></details></li></ul><ul id="32a543c1-b3a3-4156-873f-56232a8687ad" class="toggle"><li><details open=""><summary>EX</summary><p id="a0c6627d-6d03-4612-aa66-5be80114ce4a" class="">SELECT</p><p id="ba14a8f5-a3c8-4f39-8732-415dffccca98" class="">      coluna1, </p><p id="92edb426-9a25-48ff-ba60-8b29f985ad13" class="">      coluna2</p><p id="cd6e5467-474d-4601-a858-f28cb6613e4e" class="">FROM</p><p id="eca8a33d-9dca-46b8-b68c-2e842527a79d" class="">       tabela</p><p id="73eb65f7-311e-4b06-9522-62b7d779d355" class="">WHERE coluna1 in (SELECT …)</p></details></li></ul><ul id="050fe5ad-41c7-4ee7-8b83-9cd1ec159f1f" class="toggle"><li><details open=""><summary>ANY, SOME e ALL</summary><p id="d087e7c3-a753-4546-891e-ff01f50897d4" class="">SELECT * FROM funcionarios </p><p id="4d96c99d-d43e-4d63-b808-3b7d79f65358" class="">WHERE idade IN (21, 23, 32)</p><p id="13a91959-e643-4321-9370-fd674f8ee1ae" class="">
-</p><p id="b6d2f2de-1ebd-48da-b6ab-a57b5631f531" class="">=</p><p id="5de99f18-f9c8-4048-b3b5-ed35d7df8067" class="">
-</p><p id="8e5b1729-a740-4932-89d3-831980971290" class="">SELECT * FROM funcionarios </p><p id="52914b80-34e1-42e4-aa45-8d84a0657fc4" class="">WHERE idade IN (SELECT idade FROM funconarios WHERE sexo = ‘M’)</p><p id="0e3e8e8f-ee27-4396-a048-29a39bee9596" class="">
-</p><p id="ea91b039-db80-4fea-9b98-8ceeb32ff23c" class="">=</p><p id="1d46890e-49b8-4206-af79-fe28e0dac012" class="">
-</p><p id="770cff55-252c-48b5-b0a8-431f534396fa" class="">SELECT * FROM funcionarios </p><p id="671dd186-e14b-4e31-9c6a-2822fd3cbe05" class="">WHERE idade = ANY  (SELECT idade FROM funconarios WHERE sexo = ‘M’)</p><p id="777bfbb4-7ab2-4ea3-be5a-d20455124d53" class="">
-</p><p id="23bbd98c-e09d-4851-acc2-2a3304eec792" class="">(vantagem: permite operadores, maior menor etc.)</p><p id="9611ac45-96c0-4d1d-bab0-30d9c294f203" class="">
-</p><p id="cbeeaaee-b5aa-43c6-bac4-a4b464a8a1a2" class="">equivalente ao in, seleciona linha q tem valor igual a valor1 ou valor2 ou valoe3…</p><hr id="85359560-dd2e-41d6-bddd-9f84d07b13ac"/><p id="a5812bcc-7858-4b6c-9ce6-bc05691e72d8" class="">SOME e ANY sao equivalentes</p><p id="33377205-0e4a-4432-a192-468279074bf4" class="">
-</p><p id="cf9a0269-71e6-4764-86d2-70690eca7d29" class="">se usar o ALL, </p><p id="12407ffb-1cce-45d8-a505-5cd83c62ff24" class="">ele seleciona linha q tem valor maior a valor1 e valor2 e valoe3…</p></details></li></ul><ul id="1ddffc42-f76b-4574-977e-9a954d73ce88" class="toggle"><li><details open=""><summary>EXISTS</summary><p id="bd0a3117-ee0a-4c0e-bb7d-71b19d792f4a" class="">
-</p></details></li></ul><ul id="ab024b14-d3cc-41d4-af68-3961e04f31a0" class="toggle"><li><details open=""><summary>CTE</summary></details></li></ul><p id="e9f63db5-d3d1-4b61-9447-f93c05d304e5" class="">
-</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+# SQL
+
+- SELECT (seleciona tabelas)
+    - SELECT * FROM tabela1    (seleciona tudo da tabela1)
+    - SELECT StoreKey, StoreName, StorePhone FROM DimStore  (seleciona colunas especificas q eu quero)
+    - SELECT TOP(10) * FROM DimProduct   (seleciona as 10 primeiras linhas da tabela)
+    - SELECT TOP(10) PERCENT * FROM DimProduct  (seleciona as 10% primeiras linhas da tabela)
+    - SELECT DISTINCT Colorname FROM DimProduct   (seleciona só as linhas de valores distintos de uma coluna)
+- AS (renomear colunas)
+    - SELECT productname AS ‘produto’ FROM dimproduct    (altera o nome da coluna na hora de visualizar)
+    
+- ORDER BY (ordena de acordo com alguma coluna)
+    - SELECT
+    
+                    * 
+    
+           FROM 
+    
+                    tabela1 
+    
+           ORDER BY coluna1 ASC (seleciona tudo da tabela1 e ordena em ordem crescente pela coluna1)
+    
+    - SELECT
+    
+                    * 
+    
+           FROM 
+    
+                    tabela1 
+    
+           ORDER BY coluna1 DESC (seleciona tudo da tabela1 e ordena em ordem decrescente pela coluna1)
+    
+    - SUM: esta cláusula é usada para somar os valores de uma determinada coluna em uma determinada tabela. Por exemplo:
+        
+        ```
+          - SELECT SUM(Price) FROM DimProduct
+        
+        ```
+        
+- WHERE (seleciona as linhas que atenderem ao critério desejado)
+    - WHERE (selects rows that meet the desired criteria)
+        - SELECT
+        
+                     product
+        
+               FROM
+        
+                     dimProduct 
+        
+                WHERE price > 50 
+        
+        (selects all products from dimProduct where the price is greater than 50)
+        
+        - SELECT
+        
+                     product
+        
+               FROM
+        
+                     dimProduct 
+        
+                WHERE product = ‘rftgyh’ AND sla = ‘wffdesw’
+        
+    - WHERE IN (evita repetição de código)
+        - SELECT * FROM DimProduct WHERE ColorName = ‘blue’ or ColorName = ‘red’
+        
+        é melhor fazer assim:
+        
+        - SELECT * FROM DimProduct WHERE ColorName IN (’red’, ‘blue’)
+    - WHERE LIKE (procura palavra no meio da frase)
+        - SELECT * FROM DimProduct WHERE ProductName LIKE ‘%MP3 Player%’
+            
+            (retorna qualquer linha de ProductName que tenha a frase ‘MP3 Player’ no meio dela)
+            
+        - SELECT * FROM DimProduct WHERE ProductName LIKE ‘MP3 Player%’
+            
+            (retorna qualquer linha de ProductName que tenha a frase ‘MP3 Player’ no começo dela)
+            
+        - SELECT * FROM DimProduct WHERE ProductName LIKE ‘%MP3 Player’
+            
+            (retorna qualquer linha de ProductName que tenha a frase ‘MP3 Player’ no final dela)
+            
+        
+    - WHERE BETWEEN (entre valores)
+        - SELECT * FROM DimProduct WHERE Price BETWEEN 50 AND 100
+        
+              (selects all products from DimProduct where the                      price is between 50 and 100)
+        
+    - WHERE IS NULL (nulo)
+        - SELECT * FROM DimProduct WHERE Price IS NULL
+        
+        (selects all products from DimProduct where the price is not specified or unknown)
+        
+- SUM / COUNT / COUNT + DISTINCT
+    
+    (soma todos os valores na coluna Price da tabela DimProduct)
+    
+    - COUNT: esta cláusula é usada para contar o número de linhas em uma determinada tabela. Por exemplo:
+        
+        ```
+          - SELECT COUNT(*) FROM DimProduct
+        
+        ```
+        
+    
+    (conta o número total de linhas na tabela DimProduct)
+    
+    - COUNT + DISTINCT: esta cláusula é usada para contar o número de valores distintos em uma determinada coluna em uma determinada tabela. Por exemplo:
+        
+        ```
+          - SELECT COUNT(DISTINCT ColorName) FROM DimProduct
+        
+        ```
+        
+    
+    (conta o número de valores distintos na coluna ColorName da tabela DimProduct)
+    
+- MIN / MAX / AVG
+    - MIN: esta cláusula é usada para encontrar o valor mínimo em uma determinada coluna em uma determinada tabela. Por exemplo:
+        
+        ```
+          - SELECT MIN(Price) FROM DimProduct
+        
+        ```
+        
+    
+    (retorna o menor valor na coluna Price da tabela DimProduct)
+    
+    - MAX: esta cláusula é usada para encontrar o valor máximo em uma determinada coluna em uma determinada tabela. Por exemplo:
+        
+        ```
+          - SELECT MAX(Price) FROM DimProduct
+        
+        ```
+        
+    
+    (retorna o maior valor na coluna Price da tabela DimProduct)
+    
+    - AVG: esta cláusula é usada para encontrar o valor médio em uma determinada coluna em uma determinada tabela. Por exemplo:
+        
+        ```
+          - SELECT AVG(Price) FROM DimProduct
+        
+        ```
+        
+    
+    (retorna o valor médio da coluna Price da tabela DimProduct)
+    
+- GROUP BY
+    
+    
+    agrupa os dados de acordo com uma categoria desejada
+    
+    ```jsx
+    SELECT
+       COUNT(*) AS 'quantidade de produtos'
+    FROM
+       DimProduct
+    ```
+    
+    (isso mostra a quantidade total dos produtos em geral)
+    
+    ```jsx
+    SELECT
+       BrandName AS 'nome da marca',
+       COUNT(*) AS 'quantidade de produtos'
+    FROM
+       DimProduct
+    GROUP BY BrandName
+    ```
+    
+    (já isso, mostra a quantidade total dos produtos em separados pela marca, então a soma de todos vai ser a quantidade total em geral)
+    
+- GROUP BY + WHERE / GROUP BY + HAVING
+    
+    O WHERE é usado pra aplicar um filtro antes da operação, então isso pode alterar a contagem
+    
+    ```jsx
+    SELECT
+       BrandName AS 'nome da marca',
+       COUNT(*) AS 'quantidade de produtos'
+    FROM
+       DimProduct
+    WHERE BrandName = 'Litware'
+    GROUP BY BrandName
+    ```
+    
+    (isso vai selecionar a quantidade de produtos apenas da marcar Litware)
+    
+    O HAVING é usado pra aplicar um filtro após a contagem
+    
+    ```jsx
+    SELECT
+       BrandName AS 'nome da marca',
+       COUNT(*) AS 'quantidade de produtos'
+    FROM
+       DimProduct
+    GROUP BY BrandName
+    HAVING COUNT(*) > 100
+    ```
+    
+    (isso vai selecionar após a contagem de cada marca, apenas as marcas e respectivas quantidades maiores que 100)
+    
+- JOIN
+    
+    (permite interligar mais de uma tabela) 
+    
+    (usa ids ou chaves para achar informações de outras tabelas que detalham essas chaves) (ex: id 1 de uma pessoa e em outra tabela tem o id e o nome, número, cep etc.)
+    
+    (colunas em comum)
+    
+    - CHAVE PRIMARIA X CHAVE ESTRANGEIRA
+        
+        ![Captura de tela 2023-09-09 121301.png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-09_121301.png)
+        
+    - TABELA FATO X TABELA DIMENSÃO
+        
+        ![Captura de Tela (171).png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(171).png)
+        
+    - LEFT (OUTER) JOIN
+        
+        ![Captura de Tela (172).png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(172).png)
+        
+    - RIGHT (OUTER) JOIN
+        
+        ![Captura de Tela (173).png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(173).png)
+        
+    - INNER JOIN
+        
+        ![Captura de Tela (174).png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(174).png)
+        
+        ![Captura de Tela (176).png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(176).png)
+        
+        ![Captura de Tela (177).png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_Tela_(177).png)
+        
+    - EXEMPLO
+        
+        ```jsx
+        SELECT TOP(100) * FROM DimProduct
+        SELECT TOP(100) * FROM DimProductSubcategory
+        ```
+        
+        essas duas tabelas tem chaves em comum, como pode-se observar
+        
+        ![Captura de tela 2023-09-09 234950.png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-09_234950.png)
+        
+        vou selecionar as colunas que eu  quero da primeira e a correspondente ao id da segunda, deixando claro que o ProductSubcategoryKey que eu quero substituir vem do dimproduct
+        
+        ```jsx
+        SELECT
+           ProductName,
+           ProductDescription,
+           BrandName,
+           DimProduct.ProductSubcategoryKey,
+           DimProductSubcategory.ProductSubcategoryName
+        FROM
+           DimProduct
+        LEFT JOIN DimProductSubcategory
+           ON DimProduct.ProductSubcategoryKey = DimProductSubcategory.ProductSubcategoryKey
+        ```
+        
+        ![Captura de tela 2023-09-09 235019.png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-09_235019.png)
+        
+    
+- CROSS JOIN
+    
+    faz um produto cartesiano em duas tabelas
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled.png)
+    
+- MÚLTIPLOS JOINS
+    
+    quando não da pra fazer a transição do join direto de uma tabela a outra, precisssando de uma intermediária
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%201.png)
+    
+    ![Captura de tela 2023-09-10 000152.png](SQL%200d024ee3cfa74466b5243e515f9b891b/Captura_de_tela_2023-09-10_000152.png)
+    
+    aq por ex no poductsubcategorykey
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%202.png)
+    
+- UNION e UNION ALL
+    
+    union é usado quando duas tabelas tem exatamente a mesma estrutura e da pra juntar elas (junta e remove duplicados)
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%203.png)
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%204.png)
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%205.png)
+    
+    UNION ALL  é quase a mesma coisa mas não remove duplicados
+    
+- GROUP BY + JOIN
+    
+    O JOIN vem antes do GROUP BY e não tem nenhum mistério
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%206.png)
+    
+
+variaveis
+
+- SQL_VARIANT_PROPERTY
+    
+    ver qual o tipo 
+    
+    select SQL_VARIANT_PROPERTY(10, ‘BaseTye’)  
+    
+    int
+    
+- CAST
+    
+    funcao que especifica o tipo do dado
+    
+    int: inteiro
+    
+    float: decimal
+    
+    varchar: string/texto
+    
+    datetime: data e hora
+    
+    SELECT CAST(1.45 AS INT)
+    
+    força o sql a entender o 1.45 como um int
+    
+- FORMAT
+    
+    select format(valor, formato)
+    
+    SELECT FORMAT(1000, ‘N’)
+    
+    (normal) retorna 1.000
+    
+    SELECT FORMAT(1000, ‘G’)
+    
+    (generico) retorna 1000
+    
+    SELECT FORMAT(1234456789, ‘###-##-####’)
+    
+    retorna 123-45-6789
+    
+    SELECT FORMAT(CAST(’21/08/2021’ as DATETIME), ‘dd/MM/yyyy’)
+    
+    retorna 21/08/2021
+    
+    SELECT FORMAT(CAST(’21/08/2021’ as DATETIME), ‘dd/MMMM/yyyy’)
+    
+    retorna 21/agosto/2021
+    
+    SELECT FORMAT(CAST(’21/08/2021’ as DATETIME), ‘yyyy’)
+    
+    retorna 2021
+    
+- ROUND
+    
+    arredonda
+    
+    SELECT ROUND(13.73912, 2)
+    
+    retorna 13.34
+    
+    SELECT ROUND(13.73912, 2, 0)
+    
+    retorna 13.74
+    
+    SELECT ROUND(13.73912, 2, 1)
+    
+    retorna 13.73
+    
+- FLOOR
+    
+    arredonda pra baixo
+    
+    SELECT ROUND(13.73912)
+    
+    retorna 13
+    
+- CEILING
+    
+    arredonda pra cima
+    
+    SELECT ROUND(13.73912)
+    
+    retorna 14
+    
+- DECLARE/SET/SELECT
+    
+    DECLARE @var INT
+    
+    SET @var = 10
+    
+    SELECT @var 
+    
+    da pra fazer atribuição direta tbm
+    
+    DECLARE @var INT = 10
+    
+- PRINT
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%207.png)
+    
+- variáveis dentro da seleção direto a tabela
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%208.png)
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%209.png)
+    
+- acumular valores dentro de uma variável
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2010.png)
+    
+    CHAR(10) - pula uma linha
+    
+- variáveis globais
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2011.png)
+    
+
+manipulação de textos e datas
+
+- LEN/DATALENGTH
+    
+    len(”abc”) retorna 3
+    
+    datalength(”abc”) retorna 3
+    
+    len(”abc  ”) retorna 3
+    
+    datalength(”abc  “) retorna 5
+    
+- CONCAT
+    
+    CONCAT(firstname, lastname) retorna literalmente o nome todo junto
+    
+    CONCAT(firstname, ‘ ‘, lastname) retorna literalmente o nome todo certo
+    
+- LEFT/RIGHT
+    
+    left extrai uma determinada qtd de caracteres de um texto, da esquerda para a direita
+    
+    right extrai uma determinada qtd de caracteres de um texto, da esquerda para a direita
+    
+    select LEFT(‘produto123’, 7)   retorna produto
+    
+    select RIGHT(‘produto123’, 3)   retorna 123
+    
+- REPLACE
+    
+    select replace(”O excel é o melhor”, “excel”, “sql”) 
+    
+           retorna “o sql é o melhor”
+    
+- TRANSLATE
+    
+    substitui cada caractere na ordem encontrada no texto
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2012.png)
+    
+- STUFF
+    
+    substitui qualquer texto com uma quantidade de caracteres limitados, por um outro texto
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2013.png)
+    
+- UPPER /  LOWER
+    
+    meio obvio…
+    
+    upper(’abc’) retorna ABC
+    
+- CHARINDEX
+    
+    SELECT CHARINDEX(’M’, ‘Raquel Moreno’)  
+    
+         retorna 8
+    
+- SUBSTRING
+    
+    SELECT SUBSTRING(”Raquel Moreno”, 8, 6) 
+    
+          retorna ‘Moreno’
+    
+- TRIM / LTRIM / RTRIM
+    
+    trim - tira espaço adicionais a esquerda e a direita do texto
+    
+    ltrim - tira espaço adicionais a esquerda do texto
+    
+    rtrim - tira espaço adicionais a direita do texto
+    
+- DAY / MONTH / YEAR
+    
+    @vardata  = ‘23/03/2021’
+    
+    DAY(@vardata) 
+    
+       retorna 23
+    
+    MONTH(@vardata)
+    
+       retorna 03
+    
+    YEAR(@vardata) 
+    
+       retorna 2021
+    
+- DATEFROMPARTS
+    
+    @vardia = 13
+    
+    @varmes = 2
+    
+    @varano = 2021
+    
+    select DATEFROMPARTS(@vardia, @varmes, @varano) 
+    
+        retorna 12/02/2021
+    
+- GETDATE / SYSDATETIME  / DATENAME E DEATEPART
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2014.png)
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2015.png)
+    
+- DATEADD / DATEDIFF0
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2016.png)
+    
+
+funcoes condicionais
+
+- CASE
+    
+    CASE 
+    
+            WHEN teste THEN ‘resultado1’
+    
+       ELSE ‘resultado2’
+    
+    END
+    
+- IIF
+    
+    IIF( condicao, secondicao, senao)
+    
+- ISNULL
+    
+    ISNULL(analisar, se for null vai trocar o atualisar)
+    
+
+sql views
+
+- pq criar views
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2017.png)
+    
+    [https://www.notion.so](https://www.notion.so)
+    
+- CREATE VIEW
+    
+    CREATE VIEW nomeview AS SELECT …
+    
+    colocar GO no final ou começo do comando para o sql saber onde começar/terminar
+    
+    views sao armazenadas na pasta exibições
+    
+- USE
+    
+    especifica em qual banco de dados o view tem q ser criado
+    
+    USE teste
+    
+- ALTER VIEW
+    
+    GO
+    
+    ALTER VIEW teste AS
+    
+    SELECT … 
+    
+    GO
+    
+- DROP VIEW
+    
+    DROP VIEW teste
+    
+    exclui o view teste
+    
+
+crud
+
+- o que é
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2018.png)
+    
+- CREATE DATABASE
+    
+    CREATE DATABASE Teste
+    
+- DROP DATABASE
+    
+    DROP DATABASE Teste
+    
+- CREATE TABLE
+    
+    USE bancodedados
+    
+    CREATE TABLE nome_tabela (
+    
+          coluna1 tipo,
+    
+          coluna2 tipo,
+    
+     coluna3 tipo
+    
+      )
+    
+- INSERT SELECT
+    
+    INSERT INTO  nome_tabela(coluna1, coluna2, coluna3)
+    
+    SELECT
+    
+          coluna1,
+    
+    coluna2,
+    
+    coluna3
+    
+    FROM outra_tabela
+    
+- INSERT INTO
+    
+    INSERT INTO  nome_tabela(coluna1, coluna2, coluna3)
+    
+          (conteudo1, conteudo2, conteudo3), 
+    
+          (conteudo1, conteudo2, conteudo3)
+    
+- UPDATE
+    
+    UPDATE nome_tabela
+    
+    VALUES 
+    
+    SET nome_produto = “sla”
+    
+    WHERE  id_produto = 3
+    
+- DELETE
+    
+    DELETE 
+    
+    FROM nome_tabela
+    
+    WHERE coluna1 = ‘sla’
+    
+    (deleta um dado)
+    
+- DROP TABLE
+    
+    DROP TABLE nome_tabela
+    
+- ALTER TABLE
+    
+    alter table nome_tabela
+    
+    ADD coluna4 tipo
+    
+    (ficam com valor NULL)
+    
+    ALTER TABLE nome_tabela
+    
+    ALTER COLUMN coluna1 tipo
+    
+    (muda o tipo da coluna1)
+    
+    ALTER TABLE nome_tabela
+    
+    DROP COLUMN coluna1 
+    
+    (apaga coluna1)
+    
+
+subqueries
+
+- o que é
+    
+    ![Untitled](SQL%200d024ee3cfa74466b5243e515f9b891b/Untitled%2019.png)
+    
+- EX
+    
+    SELECT
+    
+          coluna1, 
+    
+          coluna2
+    
+    FROM
+    
+           tabela
+    
+    WHERE coluna1 in (SELECT …)
+    
+- ANY, SOME e ALL
+    
+    SELECT * FROM funcionarios 
+    
+    WHERE idade IN (21, 23, 32)
+    
+    =
+    
+    SELECT * FROM funcionarios 
+    
+    WHERE idade IN (SELECT idade FROM funconarios WHERE sexo = ‘M’)
+    
+    =
+    
+    SELECT * FROM funcionarios 
+    
+    WHERE idade = ANY  (SELECT idade FROM funconarios WHERE sexo = ‘M’)
+    
+    (vantagem: permite operadores, maior menor etc.)
+    
+    equivalente ao in, seleciona linha q tem valor igual a valor1 ou valor2 ou valoe3…
+    
+    ---
+    
+    SOME e ANY sao equivalentes
+    
+    se usar o ALL, 
+    
+    ele seleciona linha q tem valor maior a valor1 e valor2 e valoe3…
+    
+- EXISTS
+    
+    
+- CTE
